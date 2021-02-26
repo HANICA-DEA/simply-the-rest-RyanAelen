@@ -100,3 +100,4 @@ fabric.properties
 # Idea
 /.idea
 /simply-the-rest.iml
+/target
