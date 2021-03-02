@@ -26,12 +26,12 @@ public class ItemAccess {
         return Response.ok(itemService.getAll()).build();
     }
 
-//    @GET
-//    @Path("/")
-//    @Produces(MediaType.TEXT_PLAIN)
-//    public Response iets() {
-//        return Response.ok("bread, butter").build();
-//    }
+    @GET
+    @Path("/")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response iets() {
+        return Response.ok("bread, butter").build();
+    }
 
     @GET
     @Path("/{id}")
@@ -46,5 +46,13 @@ public class ItemAccess {
     public Response addItem(ItemDTO itemDTO) {
         itemService.addItem(itemDTO);
         return Response.status(Response.Status.CREATED).build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response removeItem(@PathParam("id") int id) {
+        itemService.deleteItem(id);
+        return Response.status(Response.Status.OK).build();
     }
 }
