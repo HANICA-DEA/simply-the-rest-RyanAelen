@@ -23,8 +23,8 @@ public class ItemAccess {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<ItemDTO> jsonResponse() {
-        return itemService.getAll();
+    public Response jsonResponse() {
+        return Response.ok(itemService.getAll()).build();
     }
 
     @GET
